@@ -1,0 +1,38 @@
+import random
+import datetime
+
+class animaux :
+    def __init__(self, name , age , sexe):
+        self.name = name
+        self.age = age
+        self.sexe = sexe
+
+
+    def __str__(self):
+        return "Un(e)" + self.name + "il a " + self.age + "ans et est un(e) " + self.sexe + "\n"
+
+
+
+class ferme :
+
+    def __init__(self , name):
+        self.name = name
+        self.maferme = []
+
+    def __str__(self):
+
+        out = "Dans cette ferme nous avons :\n"
+        for mykey in self.maferme:
+            out += str(mykey) + "\n"
+
+        return out
+
+if __name__ == "__main__":
+
+    Farm_list = []
+    Farm_list.append(ferme("Première ferme"))
+    Farm_list.append(ferme("Deuxième ferme"))
+    Farm_list[0].maferme.append(animaux("Vache",datetime.datetime.now() ,random.choice(['femmelle', 'male'])))
+    Farm_list[0].maferme.append(animaux("Python",datetime.datetime.now(), random.choice(['femmelle', 'male'])))
+    Farm_list[1].maferme.append(animaux("Vache",datetime.datetime.now(), random.choice(['femmelle', 'male'])))
+    print(Farm_list[1])
